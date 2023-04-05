@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>登录账号以继续</title>
+    <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
+    <script language="javascript">
+        alert("请注意，梦工坊工作室内网不支持移动端访问，相关源码已清除。")
+    </script>
+  </head>
+    <link rel="stylesheet" href="css/loading.css">
+    <script>
+     function updateTime() {
+         var now = new Date();
+         var hours = now.getHours();
+         var minutes = now.getMinutes();
+         var seconds = now.getSeconds();
+
+  // Make sure all fields have at least two digits
+        if (hours < 10) { hours = "0" + hours; }
+        if (minutes < 10) { minutes = "0" + minutes; }
+        if (seconds < 10) { seconds = "0" + seconds; }
+
+  // Update the content of the element with id "time"
+       document.getElementById("time").innerHTML = hours + ":" + minutes + ":" + seconds;
+       }
+
+// Call updateTime every second to update the time display
+      setInterval(updateTime, 1000);
+</script>
+    <script type="text/javascript">
+      function checkCode() {
+        var inputCode = document.getElementById("codeInput").value;
+        var validCodes = {
+          "DS2022100101": "工号确认：张总",
+          "DS2022100102": "工号确认：CXR",
+          "DS2022100103": "工号确认：return",
+          "DS2022100104": "工号确认：杨哥（Yang Ge Studio）",
+          "DS2022100105": "工号确认：ITBOT",
+          "DS2022100106": "工号确认：执念的鱼",
+          "DS2022100107": "工号确认：是好那菈Nara",
+          "DS2022100108": "工号确认：温迪（世界上第一个摸鱼师）",
+          "DS2022100109": "工号确认：小卡",
+          "DS2022100110": "工号确认：continue",
+        };
+
+        if (validCodes.hasOwnProperty(inputCode)) {
+          alert(validCodes[inputCode]);
+          window.location.href = "home.html";
+        } else {
+          alert("（错误代码：UVS-A001)您输入了错误的账号，这可能是意外，我们已帮您刷新界面，您可重新尝试！");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <audio autoplay loop>
+         <source src="1.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+         </audio>
+    <font color="pink"><h1><p id="time"></p></h1></font>&nbsp
+    <h1>请输入您的工作室工号/临时邀请账号：</h1>
+    <input type="text" id="codeInput">
+    <br><br>
+    <button onclick="checkCode()">检验</button>
+    &nbsp&nbsp<button onclick="location.href='index-EN.html'">世界 INS</button>
+    <br>&nbsp&nbsp<button onclick="location.href='pdf/内网官方文档-CN.pdf'">官方文档</button>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+body {
+  background-color: #778899;
+  font-family: 'PingFang SC', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden; /* 隐藏滚动条 */
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  font-size: 28px;
+}
+
+input[type="text"] {
+  border-radius: 5px;
+  padding: 10px;
+  width: 300px;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+button {
+  cursor: pointer;
+  background-color: #f44336; 
+  color: white; 
+  padding: 14px 20px; 
+  border: none; 
+  border-radius: 5px; 
+}
+
+button:hover {
+    background-color: #D32F2F;
+}

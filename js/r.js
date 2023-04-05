@@ -1,0 +1,1 @@
+&lt;body style=" oncontextmenu="return false" onselectstart="return false"&gt;

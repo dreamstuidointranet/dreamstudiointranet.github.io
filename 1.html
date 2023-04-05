@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>兑换码页面</title>
+    <script type="text/javascript">
+      function checkCode() {
+        var inputCode = document.getElementById("codeInput").value;
+        var validCodes = {
+          "ABC123": "欢迎您，尊敬的VIP客户！",
+          "DEF456": "感谢您参加我们的抽奖活动！",
+          "GHI789": "祝您购物愉快，谢谢惠顾！"
+        };
+
+        if (validCodes.hasOwnProperty(inputCode)) {
+          alert(validCodes[inputCode]);
+          window.location.href = "success.html";
+        } else {
+          alert("兑换码不正确，请重新输入！");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>请输入兑换码：</h1>
+    <input type="text" id="codeInput">
+    <br><br>
+    <button onclick="checkCode()">提交</button>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+&lt;body style="ondragstart="return false"&gt;

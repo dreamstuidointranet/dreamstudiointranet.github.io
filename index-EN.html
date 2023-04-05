@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Login to account to continue</title>
+    <body oncontextmenu=self.event.returnValue=false onselectstart="return false">
+    <script language="javascript">
+        alert("Please note that the internal network of Dream Studio does not support mobile access, and the relevant source code has been cleared.")
+    </script>
+    <link rel="stylesheet" href="css/loading.css">
+    <script>
+     function updateTime() {
+         var now = new Date();
+         var hours = now.getHours();
+         var minutes = now.getMinutes();
+         var seconds = now.getSeconds();
+
+  // Make sure all fields have at least two digits
+        if (hours < 10) { hours = "0" + hours; }
+        if (minutes < 10) { minutes = "0" + minutes; }
+        if (seconds < 10) { seconds = "0" + seconds; }
+
+  // Update the content of the element with id "time"
+       document.getElementById("time").innerHTML = hours + ":" + minutes + ":" + seconds;
+       }
+
+// Call updateTime every second to update the time display
+      setInterval(updateTime, 1000);
+</script>
+    <script type="text/javascript">
+      function checkCode() {
+        var inputCode = document.getElementById("codeInput").value;
+        var validCodes = {
+          "JHXHH": "(Error code: UVS-A002) Unfortunately, we regret to inform you that the login method you have chosen is EN login. EN login is only available for members of the overseas partition of Dream Studio and members at or above the level of domestic supervisor. EN defaults to the English Home interface, which is currently being built. You are currently unable to access Home through this method. Moreover, the partitions in the brief have not yet been opened to members of overseas partitions, which has caused inconvenience to you. Please understand!",
+          "DKHWJ78": "(Error code: UVS-A002) Unfortunately, we regret to inform you that the login method you have chosen is EN login. EN login is only available for members of the overseas partition of Dream Studio and members at or above the level of domestic supervisor. EN defaults to the English Home interface, which is currently being built. You are currently unable to access Home through this method. Moreover, the partitions in the brief have not yet been opened to members of overseas partitions, which has caused inconvenience to you. Please understand!",
+          "86GJHG9": "(Error code: UVS-A002) Unfortunately, we regret to inform you that the login method you have chosen is EN login. EN login is only available for members of the overseas partition of Dream Studio and members at or above the level of domestic supervisor. EN defaults to the English Home interface, which is currently being built. You are currently unable to access Home through this method. Moreover, the partitions in the brief have not yet been opened to members of overseas partitions, which has caused inconvenience to you. Please understand!"
+        };
+
+        if (validCodes.hasOwnProperty(inputCode)) {
+          alert(validCodes[inputCode]);
+          window.location.href = "index-EN.html";
+        } else {
+          alert("(Error code: UVS-A001) You have entered the wrong account, which may be unexpected. We have helped you refresh the interface, you can try again!");
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <audio autoplay loop>
+         <source src="1.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+         </audio>
+    <font color="pink"><h1><p id="time"></p></h1></font>&nbsp
+     <font color="white"><h3>Please enter your studio ID/temporary invitation account:</h3></font>
+    <input type="text" id="codeInput">
+    <br><br>
+    <button onclick="checkCode()">Check</button>
+    &nbsp&nbsp<button onclick="location.href='index.html'">中国 CN</button>
+    <br>&nbsp&nbsp<button onclick="location.href='pdf/内网官方文档-INS.pdf'">Official documents</button>
+  </body>
+</html>
